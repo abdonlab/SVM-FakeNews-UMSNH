@@ -1,0 +1,78 @@
+WIKI TÉCNICA: DETECCIÓN DE FAKE NEWS UMSNH Proyecto: Implementación de
+Machine Learning mediante SVM Institución: ISU Universidad Doctorando:
+Gilberto Abdón Chávez Olivos
+
+1.  DESCRIPCIÓN DEL ALGORITMO
+
+El proyecto utiliza Support Vector Machines (SVM), un modelo de
+aprendizaje supervisado diseñado para resolver problemas de
+clasificación binaria.
+
+En el contexto de la UMSNH, el algoritmo busca separar dos clases: Clase
+0: Fake News (Desinformación). Clase 1: Información Verificada (Fuentes
+oficiales).
+
+2.  FUNDAMENTACIÓN MATEMÁTICA
+
+El objetivo primordial del modelo es encontrar la Función Aprendida (G)
+que mejor aproxime a la Función Ideal (F).
+
+2.1 El Hiperplano Óptimo
+
+El modelo construye un hiperplano en un espacio de alta dimensionalidad
+definido por la ecuación:
+
+w · x + b = 0
+
+Donde: w: Vector de pesos (determina la orientación del hiperplano). x:
+Vector de características del texto (obtenido mediante TF-IDF). b: Sesgo
+o término de intercepción.
+
+2.2 Maximización del Margen
+
+A diferencia de otros algoritmos, SVM busca maximizar la distancia entre
+los datos más cercanos de cada clase (Vectores de Soporte).
+
+Matemáticamente, esto se logra minimizando la norma del vector de pesos:
+
+min (1/2) ||w||^2
+
+3.  PIPELINE DE IMPLEMENTACIÓN (CÓDIGO)
+
+La implementación se divide en tres etapas críticas reflejadas en el
+repositorio de GitHub:
+
+A. Preprocesamiento y Vectorización (TF-IDF)
+
+Dado que el texto es un dato no estructurado, se utiliza la técnica
+TF-IDF (Term Frequency - Inverse Document Frequency).
+
+TF: Frecuencia de la palabra en el mensaje actual. IDF: Rareza de la
+palabra en el conjunto total de noticias.
+
+Esto permite que términos como “Rectoría” o “Inscripción” tengan más
+peso que artículos comunes como “el” o “la”.
+
+B. Entrenamiento del Modelo
+
+Se utiliza un Kernel Lineal. Se selecciona este debido a que, en
+problemas de texto con muchas dimensiones, la separación suele ser
+linealmente posible, lo que mejora la generalización y evita el
+sobreajuste.
+
+C. Evaluación de Métricas
+
+El éxito del modelo se mide mediante:
+
+Precision: Capacidad de no marcar una noticia real como falsa. Recall:
+Capacidad de detectar todas las noticias falsas (prioritario para la
+UMSNH). F1-Score: Media armónica entre Precision y Recall.
+
+4.  ESTRUCTURA DEL REPOSITORIO
+
+Para asegurar la reproducibilidad exigida por el Dr. Rigoberto González,
+el repositorio sigue la siguiente estructura:
+
+/src: Scripts de entrenamiento y predicción. /models: Archivos binarios
+del modelo entrenado (.pkl). /data: Muestras de datos para pruebas.
+requirements.txt: Librerías necesarias (scikit-learn, pandas).

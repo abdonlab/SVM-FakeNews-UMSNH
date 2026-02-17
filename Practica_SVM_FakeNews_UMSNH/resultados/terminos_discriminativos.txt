@@ -1,0 +1,23 @@
+Top términos asociados a FAKE NEWS (clase 0):
+- los: -0.4568
+- sin: -0.4034
+- urgente: -0.3823
+- todos: -0.3567
+- revela: -0.3046
+- que: -0.2775
+- profesores: -0.2668
+- profesores de: -0.2668
+- umsnh por: -0.2662
+- whatsapp: -0.2658
+
+Top términos asociados a INFORMACIÓN VERIFICADA (clase 1):
+- para: 0.4901
+- de: 0.4447
+- del: 0.3721
+- convocatoria: 0.3563
+- con: 0.3483
+- internacional: 0.3209
+- horarios: 0.2988
+- conacyt: 0.2838
+- consulta: 0.2837
+- de ingeniería: 0.2811
